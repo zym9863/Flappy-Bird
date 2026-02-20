@@ -1,3 +1,5 @@
+[English](./README-EN.md) | **中文**
+
 # Flappy Bird 🐦
 
 一个使用 HTML5 Canvas 实现的经典 Flappy Bird 游戏克隆版本。
