@@ -3,23 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flappy Bird</title>
+    <title>Flappy Bird Arcade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <canvas id="gameCanvas" width="320" height="480"></canvas>
-        <div id="uiLayer" class="ui-layer">
-            <h1 id="title">Flappy Bird</h1>
-            <p id="scoreText">Score: <span id="currentScore">0</span></p>
-            <button id="startBtn">开始游戏</button>
-            <div id="gameOverScreen" class="hidden">
-                <h2>游戏结束!</h2>
-                <p>最终得分: <span id="finalScore">0</span></p>
-                <button id="restartBtn">再玩一次</button>
+    <main class="app-shell">
+        <section class="game-container" aria-label="Flappy Bird 游戏区域">
+            <canvas id="gameCanvas" width="320" height="480"></canvas>
+            <div class="crt-overlay" aria-hidden="true"></div>
+            <div class="scanline-overlay" aria-hidden="true"></div>
+
+            <div id="uiLayer" class="ui-layer">
+                <header class="hud" id="scoreText" aria-live="polite">
+                    <p class="score-badge">SCORE <span id="currentScore">0</span></p>
+                    <p class="score-badge secondary">BEST <span id="bestScore">0</span></p>
+                </header>
+
+                <section id="startPanel" class="panel">
+                    <h1 id="title">FLAPPY BIRD</h1>
+                    <p class="tagline">霓虹街机模式已就绪</p>
+                    <p class="tip">按空格 / ↑ / 点击屏幕即可振翅</p>
+                    <button id="startBtn">开始游戏</button>
+                </section>
+
+                <section id="gameOverScreen" class="panel hidden">
+                    <h2>游戏结束</h2>
+                    <p class="result-line">本局得分 <span id="finalScore">0</span></p>
+                    <p class="result-line dim">历史最高 <span id="finalBestScore">0</span></p>
+                    <button id="restartBtn">再来一局</button>
+                </section>
+
+                <footer class="control-hint" id="statusLine">
+                    准备起飞
+                </footer>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
